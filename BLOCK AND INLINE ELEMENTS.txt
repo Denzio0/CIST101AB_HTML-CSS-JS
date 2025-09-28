@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTML BLOCK AND INLINE ELEMENTS PRACTICALS - DO NOT GO YET!</title>
+	</head>
+	<body>
+	
+<!--BACKGROUND OF THE WHOLE PAGE - CREDITS TO THE OWNER -->
+	<div style=" 
+		position: fixed;  
+		top: 0;   
+		left: 0;    
+		width: 100%;  
+		height: 100%; 
+		background: url('Bojack Horseman_.gif') no-repeat center center fixed;
+		background-size: cover; 
+		filter: blur(5px); 
+		z-index: -2;">
+	</div>
+
+<!--HEADERS AND TITLES FOR THE ONLINE CLASS ACTIVITY -->
+	<h1 style="font-family:'Gothic Sans', sans-serif;
+		text-align:center;
+		font-size:72px;
+		color:#ffffff;
+		letter-spacing:2px;
+		text-shadow:0 0 6px #4da3ff,
+					0 0 12px #4da3ff,
+					0 0 24px #4da3ff;">
+		MARC RODEN D. FAMERO
+	</h1>
+
+	<h2 style="font-family:'Gothic Sans', sans-serif;
+		text-align:center;
+		font-size:50px;
+		color:#ffffff;
+		letter-spacing:1px;
+		text-shadow:0 0 6px #ffb366,
+					0 0 14px #ff9933,
+					0 0 28px #ff8000;">
+		BSIT 1-3
+		</h2>
+
+	<h2 style="font-family:'Georgia', serif;
+		text-align:center;
+		font-size:50px;
+		color:#ffffff;
+		letter-spacing:1px;
+		text-shadow:0 0 6px #ffb366,
+					0 0 14px #ff9933,
+					0 0 28px #ff8000;">
+		 INTRODUCTION TO COMPUTING (CIST101)
+	</h2>
+
+	<h3 style="font-family:'Georgia', serif;
+		text-align:center;
+		font-size:42px;
+		color:#ffffff;
+		letter-spacing:1px;
+		text-shadow:0 0 6px #66ff66,
+					0 0 14px #33cc33,
+					0 0 28px #00b300;">
+	HTML BLOCK AND INLINE ELEMENTS
+	</h3>
+
+<!--BACKGROUND AUDIO OF THE POEM - CREDITS TO THE OWNER -->		
+	<div style="text-align:center; background: linear-gradient(to right, #C28729, #9C9344); padding: 20px; border-radius: 15px; width: 	fit-content; margin: 30px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+			<h3 style="color: white; font-family: Aharoni; margin-bottom: 10px;">THE VIEW FROM HALF-WAY DOWN</h3>
+			<audio controls autoplay loop>
+			<source src="Bojack Horseman [SPOILERS] - The View from Halfway Down.mp3" type="audio/mpeg">
+			</audio>
+	</div>
+	
+<!--A DIV OR DIVISION WITH A SYTLE -->		
+		<div style="border:2px solid #555;
+					padding:18px 28px;
+					color:#222;
+					font-size:26px;
+					font-style:italic;
+					font-family:'Georgia', serif;
+					text-align:center;
+					letter-spacing:1px;
+					background:#f9f9f9;
+					border-radius:10px;
+					box-shadow:2px 2px 8px rgba(0,0,0,0.15);">
+		  Do not go yet, stay where the quiet holds its breath
+		</div>
+		
+		<div style="font-family:Cambria, serif;
+            color:#ffffff;
+            font-size:28px;
+            font-weight:bold;
+            text-align:center;
+            padding:24px 32px;
+            background:#2e7d32;
+            border-radius:12px;
+            border:3px solid #1b5e20;
+            box-shadow:4px 4px 12px rgba(0,0,0,0.3);">
+		  <p>Hold on to tomorrow, for its light has not yet spoken.  
+		  Your story is still unfolding, and the world waits for your voice.</p>
+		</div>
+		
+		<div style="font-family:'Times New Roman', serif;
+					color:#ff9800;
+					font-size:24px;
+					text-align:center;
+					padding:20px;
+					background:#fff3e0;
+					border:2px solid #ff9800;
+					border-radius:8px;
+					box-shadow:3px 3px 8px rgba(0,0,0,0.2);">
+		  <p>Every sunrise brings a new chance — stay present and see what unfolds.</p>
+		</div>
+
+<!--A PARAGRAPH WITH A STYLE -->		
+		
+		<p style="font-family:Georgia, serif;
+				  font-size:22px;
+				  color:#F7F5F5;
+				  text-align:center;
+				  line-height:1.6;">
+		  I cherish the quiet grace of 
+		  <span style="color:#FCFC00;
+					   font-family:Arial, sans-serif;
+					   font-weight:bold;">
+			Pamantasan ng Lungsod ng Maynila
+		  </span>,  
+		  where every stone seems to <span style="border: 3px solid green; color: lightgreen; padding:2px 4px;"> whisper stories of learning and hope.</span>
+		</p>
+		
+<!--A DIV INSIDE ANOTHER DIV - THE MAIN BODY OF THE POEM -->	
+	
+		<div style="text-align:center; margin-top:30px;">
+				
+			<div style="display:inline-block;
+						background:linear-gradient(to right, #ffa726, #fb8c00);
+						padding:24px;
+						border:3px dashed #e65100;
+						font-family:Georgia, serif;
+						font-size:22px;
+						color:#fff;
+						line-height:1.8;
+						border-radius:8px;
+						width:320px;
+						min-height:420px;
+						text-align:left;
+						vertical-align:top;">
+			  <h2 style="margin-top:0;
+						 color:#fff3e0;
+						 font-size:28px;
+						 text-align:center;">
+				The View from Halfway Down
+			  </h2>
+
+			  <p>The weak breeze whispers nothing,<br>
+			  the water screams sublime.<br>
+			  His feet shift, teeter-totter,<br>
+			  deep breaths, stand back, it’s time.</p>
+
+			  <p>Toes untouch the overpass,<br>
+			  soon he’s water-bound.<br>
+			  Eyes locked shut but peek to see<br>
+			  the view from halfway down.</p>
+			</div>
+
+			<div style="display:inline-block;
+						background:linear-gradient(to bottom, #90caf9, #42a5f5);
+						padding:26px 30px;
+						border:3px solid #1565c0;
+						font-family:'Times New Roman', serif;
+						font-size:22px;
+						color:#0d1b2a;
+						line-height:1.8;
+						border-radius:12px;
+						text-align:left;
+						box-shadow:4px 4px 12px rgba(0,0,0,0.15);
+						width:320px;
+						min-height:420px;
+						vertical-align:top;">
+			  <p>A little wind, a summer sun,<br>
+			  a river rich and regal.<br>
+			  A flood of fond endorphins<br>
+			  brings a calm that knows no equal.</p>
+
+			  <p>You’re flying now, you see things<br>
+			  much more clear than from the ground.<br>
+			  It's all okay, or it would be<br>
+			  were you not now halfway down.</p>
+			</div>
+
+			<div style="display:inline-block;
+						background:linear-gradient(135deg, #ffe082, #ffca28);
+						padding:28px 32px;
+						border:3px dotted #8d6e63;
+						font-family:Cambria, serif;
+						font-size:22px;
+						color:#3e2723;
+						line-height:1.8;
+						border-radius:14px;
+						text-align:left;
+						width:320px;
+						min-height:420px;
+						vertical-align:top;">
+			  <p>Thrash to break from gravity,<br>
+			  what now could slow the drop?<br>
+			  All I’d give for toes to touch<br>
+			  the safety back at top.</p>
+
+			  <p>But this is it, the deed is done,<br>
+			  silence drowns the sound.<br>
+			  Before I leaped I should've seen<br>
+			  the view from halfway down.</p>
+
+			  <p>I really should’ve thought about<br>
+			  the view from halfway down.<br>
+			  <span style="border: 2px solid red; padding:2px 4px;"> I wish I could've known about<br>
+			  the view from halfway down—</p> </span>
+			</div>
+<!--END OF THE FIRST DIV -->	
+		</div>
+<!--END OF INITIAL DIV -->	
+		
+<!--EXTRA VISUAL FOR IT TO BE APPEALING -->	
+	<div style="text-align:center; margin-top:40px;">
+	  <img src="3359-Woman_Grief_Suicide-1296x728-header.webp"
+		   alt="Ribbon being cut, symbolizing release and hope"
+		   style="width:280px;
+				  border-radius:10px;
+				  box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+	  <p style="font-family:Georgia, serif;
+				font-size:20px;
+				color:#95B07F;
+				margin-top:12px;">
+		Choose life — every thread can be untangled, every day can start again.
+	  </p>
+	</div>
+
+
+	</body>
+</html>
