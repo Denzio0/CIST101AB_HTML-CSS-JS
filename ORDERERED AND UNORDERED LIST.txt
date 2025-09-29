@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Siomai Types List with Glow</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", sans-serif;
+            background: url('https://www.anko.com.tw/Templates/pic/anko-epaper-The%20King%20of%20Dim%20Sum-Siomai-Shumai-1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: Left;
+            margin: 0;
+            padding: 20px;
+        }
+		
+
+        ul li, ol li {
+            font-size: 24px;
+            margin: 10px 0;
+            text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+            transition: all 0.3s ease;
+
+        h2 {
+            text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;
+        }
+    </style>
+</head>
+<body>
+
+  <h1 style="font-size:70px; text-shadow:0 0 5px yellow, 0 0 10px yellow, 0 0 20px yellow;">
+        MARC RODEN D. FAMERO
+    </h1>
+
+    <h2 style="font-size:60px; text-shadow:0 0 5px purple, 0 0 10px purple, 0 0 20px purple;">
+        BSIT 1-3
+    </h2>
+
+    <h3 style="font-size:50px; text-shadow:0 0 5px royalblue, 0 0 10px royalblue, 0 0 20px royalblue;">
+        <b><i>ORDERED AND UNORDERED LIST</i></b>
+    </h3>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Siomai Types with Descriptions</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", sans-serif;
+            background: url('https://www.anko.com.tw/Templates/pic/anko-epaper-The%20King%20of%20Dim%20Sum-Siomai-Shumai-1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        ul, ol {
+            text-align: left;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+            text-shadow: 0 0 5px yellow, 0 0 10px yellow, 0 0 15px yellow;
+            transition: all 0.3s ease;
+        }
+
+        li:hover {
+            text-shadow: 0 0 10px yellow, 0 0 20px orange, 0 0 30px red;
+            cursor: pointer;
+        }
+
+        ul li ul, ol li ol {
+            margin-top: 5px;
+            margin-left: 20px;
+            list-style-type: circle;
+        }
+
+        h2 {
+            text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 15px blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Unordered List of Favorite Dishes Types</h2>
+    <ul>
+        <li>Laing na May Labanos sa Kakaibang Mundo
+            <ul>
+                <dd>Masarap na siomai sobra</dd>
+            </ul>
+        </li>
+        <li>Calderetang Pakpak ng Ibon ng Gubat
+            <ul>
+                <dd>Malinamnam at juicy</dd>
+            </ul>
+        </li>
+        <li>Pininyahang Pusit ng Ilog
+            <ul>
+                <dd>Light at masarap</dd>
+            </ul>
+        </li>
+        <li>Adobong Ulo ng Tarsier
+            <ul>
+                <dd>Fresh at malasa</dd>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Ordered List of Favorite Dishes</h2>
+    <ol>
+        <li>Sinampalukang Bulsa ng Kangaroo
+            <ol>
+                <dd>Unique flavor na paborito ng bata</dd>
+            </ol>
+        </li>
+        <li>Gitnang Darliri ni Sukuna
+            <ol>
+                <dd>Malasa at mataba</dd>
+            </ol>
+        </li>
+        <li>Menudong Pakpak ng Manananggal
+            <ol>
+                <dd>Soft at healthy</dd>
+            </ol>
+        </li>
+        <li>Paksiw na Balat ng Tricycle
+            <ol>
+                <dd>Extra spicy at flavorful</dd>
+            </ol>
+        </li>
+    </ol>
+
+</body>
+</html>
+
