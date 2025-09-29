@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!---HANDS-ON NUMBER 2: CREATE YOUR OWN WEBPAGE APPLYING HYPERTEXT MARKUP LANGUAGE (HTML) AND CSS ELEMENTS, ATTRIBUTES, ETC -->
+<!-- BSIT CURRICULUM -->
+<!-- 1ST YEAR TO 4TH YEAR, 1ST SEMESTER AND 2ND SEMESTER -->
+<!-- TABLES, ROWS, AND DIV -->
+
+<!--Head section setup with title, meta tags, and font link: COMMENT BY RODEN FAMERO-->
+	<head>
+		<title> HANDS-ON ACTIVITY #2 THE BSIT CURRICULUM  </title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+<!--Imports the arcade-style font. COMMENT BY RODEN FAMERO--> 
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	</head>
+
+<!--Full-screen animated background with blur effect: COMMENT BY RODEN FAMERO-->
+		<div style=" 
+			position: fixed;  
+			top: 0;   
+			left: 0;    
+			width: 100%;  
+			height: 100%; 
+			background: url('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyOXBzZmU2NHJ4NmNncmw2NmFoNDlveGRmOHdoeWY5dThmNDlmcmhsNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/U7huVmA3TKuqvznInJ/giphy.gif') no-repeat center center fixed;
+			background-size: cover; 
+			filter: blur(5px); 
+			z-index: -2;">
+		</div>
+		
+		<style>
+/*Header container with flex layout and ghost positioning: COMMENT BY RODEN FAMERO*/
+			.header-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 40px;
+				margin-bottom: 20px;
+			}
+			
+			#ghost 
+			
+			{
+			  position: absolute;
+			  top: 170px;  
+			  right: 15px; 
+			}
+
+/*Arcade ghost body using CSS grid animation: COMMENT BY RODEN FAMERO*/
+			#red {
+			  animation: upNDown infinite 0.5s;
+			  position: relative;
+			  width: 140px;
+			  height: 140px;
+			  display: grid;
+			  grid-template-columns: repeat(14, 1fr);
+			  grid-template-rows: repeat(14, 1fr);
+			  grid-column-gap: 0px;
+			  grid-row-gap: 0px;
+			  grid-template-areas:
+				"a1  a2  a3  a4  a5  top0  top0  top0  top0  a10 a11 a12 a13 a14"
+				"b1  b2  b3  top1 top1 top1 top1 top1 top1 top1 top1 b12 b13 b14"
+				"c1 c2 top2 top2 top2 top2 top2 top2 top2 top2 top2 top2 c13 c14"
+				"d1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 d14"
+				"e1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 e14"
+				"f1 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 top3 f14"
+				"top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+				"top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+				"top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+				"top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+				"top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+				"top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4 top4"
+				"st0 st0 an4 st1 an7 st2 an10 an10 st3 an13 st4 an16 st5 st5"
+				"an1 an2 an3 an5 an6 an8 an9 an9 an11 an12 an14 an15 an17 an18";
+			}
+
+/*Ghost flicker and bounce animations setup: COMMENT BY RODEN FAMERO*/
+			@keyframes upNDown {
+			  0%,
+			  49% {
+				transform: translateY(0px);
+			  }
+			  50%,
+			  100% {
+				transform: translateY(-10px);
+			  }
+			}
+
+			#top0,
+			#top1,
+			#top2,
+			#top3,
+			#top4,
+			#st0,
+			#st1,
+			#st2,
+			#st3,
+			#st4,
+			#st5 {
+			  background-color: red;
+			}
+
+			#top0 {
+			  grid-area: top0;
+			}
+
+			#top1 {
+			  grid-area: top1;
+			}
+
+			#top2 {
+			  grid-area: top2;
+			}
+
+			#top3 {
+			  grid-area: top3;
+			}
+
+			#top4 {
+			  grid-area: top4;
+			}
+
+			#st0 {
+			  grid-area: st0;
+			}
+
+			#st1 {
+			  grid-area: st1;
+			}
+
+			#st2 {
+			  grid-area: st2;
+			}
+
+			#st3 {
+			  grid-area: st3;
+			}
+
+			#st4 {
+			  grid-area: st4;
+			}
+
+			#st5 {
+			  grid-area: st5;
+			}
+
+			#an1 {
+			  grid-area: an1;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an18 {
+			  grid-area: an18;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an2 {
+			  grid-area: an2;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an17 {
+			  grid-area: an17;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an3 {
+			  grid-area: an3;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an16 {
+			  grid-area: an16;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an4 {
+			  grid-area: an4;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an15 {
+			  grid-area: an15;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an6 {
+			  grid-area: an6;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an12 {
+			  grid-area: an12;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an7 {
+			  grid-area: an7;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an13 {
+			  grid-area: an13;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an9 {
+			  grid-area: an9;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an10 {
+			  grid-area: an10;
+			  animation: flicker1 infinite 0.5s;
+			}
+
+			#an8 {
+			  grid-area: an8;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			#an11 {
+			  grid-area: an11;
+			  animation: flicker0 infinite 0.5s;
+			}
+
+			@keyframes flicker0 {
+			  0%,
+			  49% {
+				background-color: red;
+			  }
+			  50%,
+			  100% {
+				background-color: transparent;
+			  }
+			}
+
+/*Ghost eyes styling and flicker animation: COMMENT BY RODEN FAMERO*/
+			@keyframes flicker1 {
+			  0%,
+			  49% {
+				background-color: transparent;
+			  }
+			  50%,
+			  100% {
+				background-color: red;
+			  }
+			}
+
+			#eye {
+			  width: 40px;
+			  height: 50px;
+			  position: absolute;
+			  top: 30px;
+			  left: 10px;
+			}
+
+/*Styling for both ghost eyes and their white highlights: COMMENT BY RODEN FAMERO*/
+			#eye::before {
+			  content: "";
+			  background-color: white;
+			  width: 20px;
+			  height: 50px;
+			  transform: translateX(10px);
+			  display: block;
+			  position: absolute;
+			}
+
+			#eye::after {
+			  content: "";
+			  background-color: white;
+			  width: 40px;
+			  height: 30px;
+			  transform: translateY(10px);
+			  display: block;
+			  position: absolute;
+			}
+
+			#eye1 {
+			  width: 40px;
+			  height: 50px;
+			  position: absolute;
+			  top: 30px;
+			  right: 30px;
+			}
+
+			#eye1::before {
+			  content: "";
+			  background-color: white;
+			  width: 20px;
+			  height: 50px;
+			  transform: translateX(10px);
+			  display: block;
+			  position: absolute;
+			}
+
+			#eye1::after {
+			  content: "";
+			  background-color: white;
+			  width: 40px;
+			  height: 30px;
+			  transform: translateY(10px);
+			  display: block;
+			  position: absolute;
+			}
+
+/*Animation and styling for blue pupils with side-to-side movement: COMMENT BY RODEN FAMERO*/
+			#pupil {
+			  width: 20px;
+			  height: 20px;
+			  background-color: blue;
+			  position: absolute;
+			  top: 50px;
+			  left: 10px;
+			  z-index: 1;
+			  animation: eyesMovement infinite 3s;
+			}
+
+			#pupil1 {
+			  width: 20px;
+			  height: 20px;
+			  background-color: blue;
+			  position: absolute;
+			  top: 50px;
+			  right: 50px;
+			  z-index: 1;
+			  animation: eyesMovement infinite 3s;
+			}
+
+			@keyframes eyesMovement {
+			  0%,
+			  49% {
+				transform: translateX(0px);
+			  }
+			  50%,
+			  99% {
+				transform: translateX(10px);
+			  }
+			  100% {
+				transform: translateX(0px);
+			  }
+			}
+
+/*Shadow effect with blur and pulsing opacity for the ghost: COMMENT BY RODEN FAMERO*/
+			#shadow {
+			  background-color: black;
+			  width: 140px;
+			  height: 140px;
+			  position: absolute;
+			  border-radius: 50%;
+			  transform: rotateX(80deg);
+			  filter: blur(20px);
+			  top: 80%;
+			  animation: shadowMovement infinite 0.5s;
+			}
+
+			@keyframes shadowMovement {
+			  0%,
+			  49% {
+				opacity: 0.5;
+			  }
+			  50%,
+			  100% {
+				opacity: 0.2;
+			  }
+			}
+
+/*Radio button container setup with flexbox and hidden input styling: COMMENT BY RODEN FAMERO*/
+			.container {
+			  display: flex;
+			  justify-content: center;
+			  align-items: center; 
+			  flex-direction: row;
+			}
+
+			.radio-wrapper {
+			  position: relative;
+			  height: 58px;
+			  width: 144px;
+			  margin: 3px;
+			}
+
+			.radio-wrapper .input {
+			  position: absolute;
+			  height: 100%;
+			  width: 100%;
+			  margin: 0;
+			  cursor: pointer;
+			  z-index: 10;
+			  opacity: 0;
+			}
+
+/*Arcade button base styling with custom properties and polygon clip-paths: COMMENT BY RODEN FAMERO*/
+			.btn {
+			  --primary: #ff184c;
+			  --shadow-primary: #fded00;
+			  --color: white;
+			  --font-size: 9px;
+			  --shadow-primary-hue: 180;
+			  --shadow-secondary-hue: 60;
+			  --shadow-secondary: hsl(var(--shadow-secondary-hue), 90%, 60%);
+			  --clip: polygon(11% 0, 95% 0, 100% 25%, 90% 90%, 95% 90%, 85% 90%, 85% 100%, 7% 100%, 0 80%);
+			  --border: 5px;
+			  --shimmy-distance: 5;
+			  --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+			  --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+			  --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+			  --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+			  --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+			  --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+			  --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+			  color: var(--color);
+			  text-transform: uppercase;
+			  font-size: var(--font-size);
+			  letter-spacing: 3px;
+			  position: relative;
+			  font-weight: 900;
+			  width: 100%;
+			  height: 100%;
+			  line-height: 38px;
+			  text-align: center;
+			  transition: background 0.2s, 0.3s;
+			}
+
+/*This CSS makes the button interactive:
+1) `.input:checked + .btn` changes the button to purple with a green shadow when selected.  
+2) `.input:hover + .btn` turns the button red and makes the text slightly bigger when hovered.  
+3) `.btn:before` creates the shadow behind the button.  
+4) `.btn:after` sets the main button color.  
+Comment by: Roden Famero */
+
+			.input:checked + .btn {
+			  --primary: #8B00FF;
+			  --shadow-primary: #00e572;
+			}
+
+			.input:hover + .btn {
+			  --primary: #cc133c;
+			  --font-size: 11px;
+			}
+
+			.btn:after, .btn:before {
+			  content: '';
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  clip-path: var(--clip);
+			  z-index: -1;
+			}
+
+			.btn:before {
+			  background: var(--shadow-primary);
+			  transform: translate(var(--border), 0);
+			}
+
+			.btn:after {
+			  background: var(--primary);
+			}
+
+/* This CSS adds extra styles for button effects:
+1) `.btn__tag` shows a small label at the bottom-right of the button.  
+2) `.btn__glitch` creates a glitch effect background using shadows and animations.  
+3) When hovered `.input:hover + .btn .btn__glitch`, the glitch effect is shown.  
+4) When clicked `.input:checked + .btn .btn__glitch`, the glitch effect is shown with a slower animation.  
+5) `.btn__glitch:before` adds another colored layer inside the glitch to make it more noticeable.  
+Comment by: Roden Famero */
+
+			.btn__tag {
+			  position: absolute;
+			  padding: 1px 4px;
+			  letter-spacing: 1px;
+			  line-height: 1;
+			  bottom: -5%;
+			  right: 5%;
+			  font-weight: normal;
+			  color: hsl(0, 0%, 0%);
+			  font-size: var(--label-size);
+			}
+
+			.btn__glitch {
+			  position: absolute;
+			  top: calc(var(--border) * -1);
+			  left: calc(var(--border) * -1);
+			  right: calc(var(--border) * -1);
+			  bottom: calc(var(--border) * -1);
+			  background: var(--shadow-primary);
+			  text-shadow: 2px 2px var(--shadow-primary), -2px -2px var(--shadow-secondary);
+			  clip-path: var(--clip);
+			  animation: glitch 2s infinite;
+			  display: none;
+			}
+
+			.input:hover + .btn .btn__glitch {
+			  display: block;
+			}
+
+			.input:checked + .btn .btn__glitch {
+			  display: block;
+			  animation: glitch 5s infinite;
+			}
+
+			.btn__glitch:before {
+			  content: '';
+			  position: absolute;
+			  top: calc(var(--border) * 1);
+			  right: calc(var(--border) * 1);
+			  bottom: calc(var(--border) * 1);
+			  left: calc(var(--border) * 1);
+			  clip-path: var(--clip);
+			  background: var(--primary);
+			  z-index: -1;
+			}
+
+/* This CSS creates the "glitch" animation and styles numbers inside the button:  
+1) `@keyframes glitch` changes the button’s shape using different `clip-path` values and moves it left or right to simulate a glitching effect.  
+2) The glitch animation runs by switching between shapes (`--clip-one` to `--clip-seven`) and small translations.  
+3) `.number` styles a small text box inside the button, placing it on the upper-right side with a background, small font, and bold letters.  
+Comment by: Roden Famero */
+
+			@keyframes glitch {
+			  0% {
+				clip-path: var(--clip-one);
+			  }
+
+			  2%, 8% {
+				clip-path: var(--clip-two);
+				transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+			  }
+
+			  6% {
+				clip-path: var(--clip-two);
+				transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+			  }
+
+			  9% {
+				clip-path: var(--clip-two);
+				transform: translate(0, 0);
+			  }
+
+			  10% {
+				clip-path: var(--clip-three);
+				transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+			  }
+
+			  13% {
+				clip-path: var(--clip-three);
+				transform: translate(0, 0);
+			  }
+
+			  14%, 21% {
+				clip-path: var(--clip-four);
+				transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+			  }
+
+			  25% {
+				clip-path: var(--clip-five);
+				transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+			  }
+
+			  30% {
+				clip-path: var(--clip-five);
+				transform: translate(calc(var(--shimmy-distance) * -1%), 0);
+			  }
+
+			  35%, 45% {
+				clip-path: var(--clip-six);
+				transform: translate(calc(var(--shimmy-distance) * -1%));
+			  }
+
+			  40% {
+				clip-path: var(--clip-six);
+				transform: translate(calc(var(--shimmy-distance) * 1%));
+			  }
+
+			  50% {
+				clip-path: var(--clip-six);
+				transform: translate(0, 0);
+			  }
+
+			  55% {
+				clip-path: var(--clip-seven);
+				transform: translate(calc(var(--shimmy-distance) * 1%), 0);
+			  }
+
+			  60% {
+				clip-path: var(--clip-seven);
+				transform: translate(0, 0);
+			  }
+
+			  31%, 61%, 100% {
+				clip-path: var(--clip-four);
+			  }
+			}
+
+			.number {
+			  background: var(--shadow-primary);
+			  color: #323232;
+			  font-size: 5.5px;
+			  font-weight: 700;
+			  letter-spacing: 1px;
+			  position: absolute;
+			  width: 15px;
+			  height: 6px;
+			  top: 0;
+			  left: 81%;
+			  line-height: 6.2px;
+			}
+
+
+/*This CSS styles the header text with neon effects:  
+1) `.header-text` centers all the header text.  
+2) `h2`, `h3`, and `h4` use the font 'Press Start 2P' with spacing between letters for a retro style.  
+3) `h2` has white text with a glowing red shadow.  
+4) `h3` has white text with a glowing orange shadow and no underline.  
+5) `h4` has smaller white text with a glowing blue shadow.  
+Comment by: Roden Famero */
+
+			.header-text {
+				text-align: center;
+			}
+
+			.header-text h2, .header-text h2, .header-text h3 {
+				font-family: 'Press Start 2P', monospace;
+				margin: 10px 0; 
+				transition: all 0.3s ease;
+				letter-spacing: 5px; 
+			}
+
+			.header-text h2 {
+				font-size: 20px;
+				color: white;
+				text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red;
+			}
+
+			.header-text h3 {
+				font-size: 15px;
+				color: white;
+				text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange;
+				text-decoration: none;
+			}
+
+			.header-text h4 {
+				font-family: 'Press Start 2P', monospace;
+				font-size: 12px;
+				color: white;
+				text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 20px blue;
+			}
+
+/* This CSS adds hover effects and extra styling:  
+1) `h2`, `h3`, and `h4` glow brighter and reduce letter spacing when hovered, making them look dynamic.  
+2) `.header-container img` has a fixed width of 150px with auto height to keep proportions, and on hover it grows slightly (scale 1.2) with a glowing white shadow.  
+3) `.typing-pixel` is styled with the retro 'Press Start 2P' font, medium size, white text, and multiple shadows for a glowing pixel typing effect.  
+Comment by: Roden Famero */
+
+			.header-text h2:hover {
+				text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+				letter-spacing: 4px;
+			}
+			.header-text h3:hover {
+				text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+				letter-spacing: 3px;
+			}
+			.header-text h4:hover {
+				text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
+				letter-spacing: 2px;
+			}
+
+
+			.header-container img {
+				width: 150px; /* fixed width */
+				height: auto; /* keeps aspect ratio */
+				transition: all 0.3s ease;
+			}
+
+			.header-container img:hover {
+				filter: drop-shadow(0 0 20px white) drop-shadow(0 0 40px white);
+				transform: scale(1.2);
+			}
+			
+				.typing-pixel {
+					font-family: 'Press Start 2P', monospace;
+					font-size: 18px;
+					color: #fff;
+					letter-spacing: 2px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-shadow: 
+						0 0 5px #fff,
+						0 0 10px #aaa,
+						0 0 20px #777,
+						0 0 40px #555,
+						0 0 60px #333;
+						
+				}
+				.typing-pixel1 {
+					width: 12px;
+					animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
+				}
+				
+					.typing-pixel2 {
+					width: 12px;
+					animation: typing 4s steps(25, end) forwards 2.5s, blink 0.75s step-end infinite;
+				}
+
+				.typing-pixel3 {
+					width: 12px;
+					animation: typing 4s steps(25, end) forwards 6s, blink 0.75s step-end infinite 4.5s;
+					border-right: 6px solid #fff;
+				}
+
+				@keyframes typing {
+					from { width: 0; }
+					to { width: 70ch; } /* adjust based on text length */
+				}
+
+				@keyframes blink {
+					50% { border-color: transparent; }
+				}
+				
+					.arcade-container {
+					display: flex;
+					gap: 20px;
+				}
+
+/* This CSS styles the "arcade-box":  
+1) `.arcade-box` has a dark background, white border, neon box-shadow, and is collapsed by default (max-height: 40px). On hover, it expands smoothly (max-height: 400px), grows slightly in size, and glows with stronger neon effects.  
+2) The `h2` title is centered with multiple neon-colored shadows to make it stand out.  
+3) The `p` text inside starts hidden (opacity 0, shifted up), then fades in and slides down smoothly when hovered.  
+4) `::before` adds an extra glowing border around the box that flickers using the `neonFlicker` animation, giving a retro arcade effect.  
+Comment by: Roden Famero */
+
+				.arcade-box {
+					background-color: #111;
+					color: #fff;
+					width: 95%;  /* full width of page */
+					max-height: 40px;  /* show only title initially */
+					border: 3px solid #fff;
+					border-radius: 10px;
+					padding: 25px;
+					overflow: hidden;
+					cursor: pointer;
+					transition: max-height 0.7s ease, box-shadow 0.5s ease, transform 0.3s ease;
+					box-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 15px #0ff;
+					position: relative;
+				}
+
+				.arcade-box:hover {
+					max-height: 400px;
+					box-shadow: 
+						0 0 20px #fff, 
+						0 0 40px #f0f, 
+						0 0 60px #0ff, 
+						0 0 80px #ff0, 
+						0 0 100px #ff00ff;
+					transform: scale(1.02);
+				}
+
+				.arcade-box h2 {
+					margin: 0;
+					font-size: 16px;
+					text-align: center;
+					color: #fff;
+					text-shadow: 
+						0 0 5px #fff, 
+						0 0 10px #f0f, 
+						0 0 15px #0ff, 
+						0 0 20px #ff0, 
+						0 0 25px #ff00ff;
+				}
+
+				.arcade-box p {
+					margin-top: 15px;
+					font-size: 12px;
+					line-height: 1.5em;
+					color: #fff;
+					text-align: justify;
+					opacity: 0;
+					transform: translateY(-15px);
+					transition: opacity 0.7s ease, transform 0.7s ease;
+				}
+
+				.arcade-box:hover p {
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+				.arcade-box::before {
+					content: '';
+					position: absolute;
+					top: -3px; left: -3px; right: -3px; bottom: -3px;
+					border: 2px solid #fff;
+					border-radius: 12px;
+					opacity: 0.4;
+					animation: neonFlicker 1.5s infinite alternate;
+				}
+
+				@keyframes neonFlicker {
+					0% { opacity: 0.3; box-shadow: 0 0 5px #fff, 0 0 15px #f0f; }
+					50% { opacity: 0.6; box-shadow: 0 0 10px #fff, 0 0 25px #0ff; }
+					100% { opacity: 0.4; box-shadow: 0 0 7px #fff, 0 0 20px #ff0; }
+				}
+				
+/* This CSS styles an `h1` header to look like a glowing arcade title with a Pac-Man effect:  
+1) The `h1` has a retro font ("Press Start 2P"), large yellow text with glowing shadows (yellow, red, cyan), centered on the page.  
+2) It is wrapped in a black background with a thick yellow border and rounded corners, creating a bold arcade-style frame.  
+3) The `glowPulse` animation makes the glow around the text pulse continuously, giving it a lively neon effect.  
+4) The `::before` pseudo-element adds a Pac-Man shape (yellow circle clipped with a triangular mouth) positioned to the left of the text.  
+5) The `pacmanChomp` animation makes the Pac-Man "chomp" repeatedly, adding movement and fun.  
+Comment by: Roden Famero */ 
+
+				h1 {
+				  font-size: 60px;
+				  font-family: 'Press Start 2P', cursive;
+				  text-align: center;
+				  color: #ffeb3b;
+				  text-shadow: 0 0 10px #ff0, 0 0 20px #f00, 0 0 30px #0ff;
+				  position: relative;
+				  display: inline-block;
+				  padding: 20px;
+				  background: black;
+				  border: 5px solid #ffeb3b;
+				  border-radius: 20px;
+				  animation: glowPulse 2s infinite alternate;
+				  overflow: hidden;
+				}
+
+				h1::before {
+				  content: "";
+				  position: absolute;
+				  left: -60px;
+				  top: 50%;
+				  transform: translateY(-50%);
+				  width: 60px;
+				  height: 60px;
+				  background: yellow;
+				  border-radius: 50%;
+				  clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%);
+				  animation: pacmanChomp 1s infinite;
+				}
+
+				@keyframes glowPulse {
+				  0% { text-shadow: 0 0 10px #ff0, 0 0 20px #f00, 0 0 30px #0ff; }
+				  100% { text-shadow: 0 0 20px #0ff, 0 0 40px #ff0, 0 0 60px #f0f; }
+				}
+
+				@keyframes pacmanChomp {
+				  0% { clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%); }
+				  50% { clip-path: polygon(0% 0%, 100% 50%, 0% 100%); }
+				  100% { clip-path: polygon(0% 0%, 100% 25%, 100% 75%, 0% 100%); }
+				}
+
+/* This CSS designs an interactive curriculum section:  
+1) `.curriculum-container` centers the content with a maximum width for neat alignment.  
+2) `.curriculum-item` separates each curriculum entry with space below it.  
+3) `.curriculum-button` creates a large clickable button, styled with bold text, white borders, neon-like glow, and smooth hover transitions.  
+4) On hover, `.curriculum-item:hover .curriculum-button` slightly enlarges the button using scale for emphasis.  
+5) `.curriculum-table-wrapper` hides table details by default with `max-height: 0`, then reveals them smoothly on hover by expanding to `max-height: 1000px`.  
+Comment by: Roden Famero */
+
+				.curriculum-container {
+				  max-width: 1000px;
+				  margin: 0 auto;
+				}
+
+				.curriculum-item {
+				  margin-bottom: 30px;
+				}
+
+				.curriculum-button {
+				  display: block;
+				  width: 100%;
+				  padding: 15px 20px;
+				  font-size: 16px;
+				  font-weight: bold;
+				  text-align: center;
+				  cursor: pointer;
+				  border-radius: 12px;
+				  border: 3px solid #fff;
+				  background: transparent;
+				  color: #fff;
+				  transition: all 0.3s ease;
+				  text-shadow: 0 0 5px #fff, 0 0 10px #0ff;
+				}
+
+				.curriculum-item:hover .curriculum-button {
+				  transform: scale(1.1);
+				}
+
+				.curriculum-table-wrapper {
+				  max-height: 0;
+				  overflow: hidden;
+				  transition: max-height 0.6s ease;
+				}
+				.curriculum-item:hover .curriculum-table-wrapper {
+				  max-height: 1000px;
+				}
+
+/* This CSS styles a table for curriculum details:  
+1) `table` stretches to full width, has collapsed borders for clean lines, rounded corners, hidden overflow, and white text for readability.  
+2) `th, td` have padding for spacing and light semi-transparent borders for separation.  
+3) `th` uses uppercase text, smaller font size, and center alignment to highlight headers.  
+Comment by: Roden Famero */ 
+				table {
+				  width: 100%;
+				  margin-top: 15px;
+				  border-collapse: collapse;
+				  border-radius: 12px;
+				  overflow: hidden;
+				  font-size: 14px;
+				  text-align: left;
+				  color: #fff;
+				}
+				th, td {
+				  padding: 10px;
+				  border: 1px solid rgba(255,255,255,0.3);
+				}
+				th {
+				  text-transform: uppercase;
+				  font-size: 13px;
+				  text-align: center;
+				}
+
+/* UNIQUE ARCADE THEMES PER SEMESTER */
+/* This CSS gives each semester its own unique theme:  
+1) Each `.semX .curriculum-button` sets border and glowing text color.  
+2) On hover, buttons show gradient backgrounds with glowing box-shadows.  
+3) Each `.semX table` matches the button theme using gradients and shadows for a neon effect.  
+4) Colors vary by semester: Sem1 (Pink & Cyan), Sem2 (Green & Yellow), Sem3 (Blue & Magenta), Sem4 (Red & Orange), Sem5 (Purple & Cyan), Sem6 (Yellow & Cyan), Sem7 (Red & Black), and Sem8 (Rainbow).  
+Comment by: Roden Famero */
+
+
+/* Sem 1: Pink & Cyan */
+				.sem1 .curriculum-button {
+				  border-color: #ff00ff;
+				  text-shadow: 0 0 5px #ff00ff, 0 0 10px #0ff;
+				}
+				.sem1 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #ff00ff, #00ffff);
+				  box-shadow: 0 0 20px #ff00ff, 0 0 40px #0ff;
+				}
+				.sem1 table {
+				  background: linear-gradient(135deg, #ff00ff, #00ffff);
+				  box-shadow: 0 0 20px #ff00ff, 0 0 40px #0ff;
+				}
+
+
+
+/*  Sem 2: Green & Yellow */
+				.sem2 .curriculum-button {
+				  border-color: #0f0;
+				  text-shadow: 0 0 5px #0f0, 0 0 10px #ff0;
+				}
+				.sem2 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #00ff00, #ffff00);
+				  box-shadow: 0 0 20px #0f0, 0 0 40px #ff0;
+				}
+				.sem2 table {
+				  background: linear-gradient(135deg, #00ff00, #ffff00);
+				  box-shadow: 0 0 20px #0f0, 0 0 40px #ff0;
+				}
+
+
+
+/* Sem 3: Blue & Magenta */
+				.sem3 .curriculum-button {
+				  border-color: #00f;
+				  text-shadow: 0 0 5px #00f, 0 0 10px #f0f;
+				}
+				.sem3 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #0000ff, #ff00ff);
+				  box-shadow: 0 0 20px #00f, 0 0 40px #f0f;
+				}
+				.sem3 table {
+				  background: linear-gradient(135deg, #0000ff, #ff00ff);
+				  box-shadow: 0 0 20px #00f, 0 0 40px #f0f;
+				}
+
+
+
+/* Sem 4: Red & Orange */
+				.sem4 .curriculum-button {
+				  border-color: #f00;
+				  text-shadow: 0 0 5px #f00, 0 0 10px #ff4500;
+				}
+				.sem4 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #ff0000, #ff4500);
+				  box-shadow: 0 0 20px #f00, 0 0 40px #ff4500;
+				}
+				.sem4 table {
+				  background: linear-gradient(135deg, #ff0000, #ff4500);
+				  box-shadow: 0 0 20px #f00, 0 0 40px #ff4500;
+				}
+
+
+
+/* Sem 5: Purple & Cyan */
+				.sem5 .curriculum-button {
+				  border-color: #9400d3;
+				  text-shadow: 0 0 5px #9400d3, 0 0 10px #0ff;
+				}
+				.sem5 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #9400d3, #00ffff);
+				  box-shadow: 0 0 20px #9400d3, 0 0 40px #0ff;
+				}
+				.sem5 table {
+				  background: linear-gradient(135deg, #9400d3, #00ffff);
+				  box-shadow: 0 0 20px #9400d3, 0 0 40px #0ff;
+				}
+
+
+
+/* Sem 6: Yellow & Cyan */
+				.sem6 .curriculum-button {
+				  border-color: #ff0;
+				  text-shadow: 0 0 5px #ff0, 0 0 10px #0ff;
+				}
+				.sem6 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #ffff00, #00ffff);
+				  box-shadow: 0 0 20px #ff0, 0 0 40px #0ff;
+				}
+				.sem6 table {
+				  background: linear-gradient(135deg, #ffff00, #00ffff);
+				  box-shadow: 0 0 20px #ff0, 0 0 40px #0ff;
+				}
+
+
+
+/* Sem 7: Red & Black */
+				.sem7 .curriculum-button {
+				  border-color: #f00;
+				  text-shadow: 0 0 5px #f00, 0 0 10px #fff;
+				}
+				.sem7 .curriculum-button:hover {
+				  background: linear-gradient(90deg, #ff0000, #111);
+				  box-shadow: 0 0 20px #f00, 0 0 40px #111;
+				}
+				.sem7 table {
+				  background: linear-gradient(135deg, #ff0000, #111);
+				  box-shadow: 0 0 20px #f00, 0 0 40px #111;
+				}
+
+
+
+/* Sem 8: Rainbow */
+				.sem8 .curriculum-button {
+				  border-color: #fff;
+				  text-shadow: 0 0 5px #ff0, 0 0 10px #0ff, 0 0 15px #f0f;
+				}
+				.sem8 .curriculum-button:hover {
+				  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+				  box-shadow: 0 0 20px #ff0, 0 0 40px #0ff, 0 0 60px #f0f;
+				}
+				.sem8 table {
+				  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+				  box-shadow: 0 0 20px #ff0, 0 0 40px #0ff, 0 0 60px #f0f;
+				}
+				
+/*This CSS makes table rows glow when hovered for each semester:  
+1) Each `.semX table tr:hover td` sets a semi-transparent background and inner glowing shadow.  
+2) Colors match each semester’s theme from the previous button/table styling.  
+3) This helps users quickly see which row they are hovering over with a neon effect.  
+Comment by: Roden Famero */
+
+/* First Year, First Semester */
+				.sem1 table tr:hover td {
+				  background: rgba(255, 0, 255, 0.4);
+				  box-shadow: inset 0 0 15px #ff00ff, inset 0 0 25px #00ffff;
+				}
+
+
+/* First Year, Second Semester */
+				.sem2 table tr:hover td {
+				  background: rgba(0, 255, 255, 0.4);
+				  box-shadow: inset 0 0 15px #00ffff, inset 0 0 25px #ff0;
+				}
+
+
+/* Second Year, First Semester */
+				.sem3 table tr:hover td {
+				  background: rgba(255, 255, 0, 0.4);
+				  box-shadow: inset 0 0 15px #ffff00, inset 0 0 25px #ff6600;
+				}
+
+
+/* Second Year, Second Semester */
+				.sem4 table tr:hover td {
+				  background: rgba(0, 255, 0, 0.4);
+				  box-shadow: inset 0 0 15px #00ff00, inset 0 0 25px #00ffff;
+				}
+
+/* Third Year, First Semester */
+				.sem5 table tr:hover td {
+				  background: rgba(255, 100, 0, 0.4);
+				  box-shadow: inset 0 0 15px #ff6600, inset 0 0 25px #ff0;
+				}
+
+/* Third Year, Second Semester */
+				.sem6 table tr:hover td {
+				  background: rgba(0, 100, 255, 0.4);
+				  box-shadow: inset 0 0 15px #0099ff, inset 0 0 25px #ff00ff;
+				}
+
+
+/* Fourth Year, First Semester */
+				.sem7 table tr:hover td {
+				  background: rgba(255, 0, 100, 0.4);
+				  box-shadow: inset 0 0 15px #ff0066, inset 0 0 25px #ffff00;
+				}
+
+
+/* Fourth Year, Second Semester */
+				.sem8 table tr:hover td {
+				  background: rgba(150, 0, 255, 0.4);
+				  box-shadow: inset 0 0 15px #9900ff, inset 0 0 25px #00ffff;
+				}
+
+			</style>
+<!-- END OF STYLE PART : COMMENT BY: RODEN FAMERO -->
+
+				<body style="background-color:#000000;">
+					<div class="header-container">
+						<img src="PLM LOGO SEAL.png" alt="PLM Logo">
+						
+						<div class="header-text">
+							<h2>PAMANTASAN NG LUNGSOD NG MAYNILA</h2>
+							<h3>Gen. Luna corner Muralla Street, Intramuros, Manila | <a href="https://plm.edu.ph" target="blank"> https://plm.edu.ph"</h3> </a>
+							<h4>COLLEGE OF INFORMATION SYSTEMS AND TECHNOLOGY MANAGEMENT</h4>
+						</div>
+						
+						<img src="download (1).png" alt="Second Logo">
+					</div>
+					
+
+				 <p class="typing-pixel typing-pixel1">HELLO WORLD TO OUR FUTURE IT!!!</p>
+				 <p class="typing-pixel typing-pixel2">ARE YOU READY TO ENGAGE IN THE GAMIFIED JOURNEY</p>
+				 <p class="typing-pixel typing-pixel3">OF INFORMATION TECHNOLOGY?</p>
+				 
+					<div style="
+					  text-align: center;
+					  background: linear-gradient(135deg, #ff00ff, #00ffff);
+					  padding: 25px;
+					  border-radius: 20px;
+					  width: fit-content;
+					  margin: 30px auto;
+					  box-shadow: 0 0 20px #ff00ff, 0 0 40px #00ffff, 0 0 60px #ffea00;
+					  border: 3px solid #fff;
+					  animation: pulseGlow 2s infinite alternate;
+					">
+					  <h3 style="
+						color: #fff;
+						font-family: 'Press Start 2P', cursive, Aharoni;
+						margin-bottom: 15px;
+						font-size: 20px;
+						text-shadow: 0 0 5px #fff, 0 0 10px #ff00ff, 0 0 20px #00ffff;
+						letter-spacing: 2px;
+					  ">
+						PLAY THE: MEGALOVANIA UNDERTALE
+					  </h3>
+
+					  <div style="
+						padding: 15px;
+						border-radius: 15px;
+						background: rgba(0,0,0,0.7);
+						box-shadow: inset 0 0 10px #ff00ff, inset 0 0 20px #00ffff;
+					  ">
+						<audio controls autoplay loop style="width: 250px; filter: drop-shadow(0 0 10px #0ff);">
+						  <source src="Undertale - Megalovania (Oscar Santos Remix).mp3" type="audio/mpeg">
+						</audio>
+					  </div>
+					</div>
+				 
+					<div id="ghost">
+					  <div id="red">
+						<div id="pupil"></div>
+						<div id="pupil1"></div>
+						<div id="eye"></div>
+						<div id="eye1"></div>
+						<div id="top0"></div>
+						<div id="top1"></div>
+						<div id="top2"></div>
+						<div id="top3"></div>
+						<div id="top4"></div>
+						<div id="st0"></div>
+						<div id="st1"></div>
+						<div id="st2"></div>
+						<div id="st3"></div>
+						<div id="st4"></div>
+						<div id="st5"></div>
+						<div id="an1"></div>
+						<div id="an2"></div>
+						<div id="an3"></div>
+						<div id="an4"></div>
+						<div id="an5"></div>
+						<div id="an6"></div>
+						<div id="an7"></div>
+						<div id="an8"></div>
+						<div id="an9"></div>
+						<div id="an10"></div>
+						<div id="an11"></div>
+						<div id="an12"></div>
+						<div id="an13"></div>
+						<div id="an14"></div>
+						<div id="an15"></div>
+						<div id="an16"></div>
+						<div id="an17"></div>
+						<div id="an18"></div>
+					  </div>
+					  <div id="shadow"></div>
+				</div>
+			
+
+			<div class="arcade-box">
+				<h2>WHAT IS CISTM?</h2>
+				<p>On 8 December 2024, in a Board of Regent meeting, a proposal entitled " Management Reorganization of the Pamantasan ng Lungsod ng Maynila was presented. Under the Academic Cluster the Bachelor of Science in Computer Science, Bachelor of Science in Information Technology and Master in Information Technology will be under the new college which is the College of Information Systems and Technology Management The College of Information Systems and Technology Management will produce globally competent graduates that shall cater the needs of the industry in research and innovation.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>WHAT IS PLM SITE?</h2>
+				<p>PLM Society of Information Technology Enthusiasts is the Official Academic Organization of Pamantasan ng Lungsod ng Maynila - IT Department. The Society of Information Technology Enthusiasts (SITE) at PLM is a student organization promoting IT skills and projects. SITE conducts workshops, seminars, student consultations, and training. Members gain mentorship, exposure to emerging technologies, and networking opportunities. SITE fosters collaboration, creativity, and professional development for IT students at all levels.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>WHAT IS INFORMATION TECHNOLOGY</h2>
+				<p>Information Technology (IT) involves using computers, software, and networks to collect, process, store, and transmit information. IT powers business systems, communications, healthcare solutions, and entertainment. Fields include software development, database management, cybersecurity, AI, cloud computing, and networking. IT is crucial for automation, problem-solving, and innovation, shaping the modern digital world. The study of the utilization of both hardware and software technologies involving, planning, installing, customizing, operating, managing and administering, and maintaining information infrastructure that provides computing solution to address the needs of an organization. The program prepares graduates to address various user needs involving the selection, development, application, integration and management of computing technologies within an organization.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>CAREER PATHS & OPPORTUNITIES</h2>
+				<p>BSIT graduates can work as Software Developers, Network Administrators, Database Analysts, IT Consultants, Cybersecurity Specialists, or pursue entrepreneurship. They may join startups, tech companies, government agencies, or research institutions. Continuous learning, certifications, and specialization in AI, cloud computing, or cybersecurity enhance career prospects and open global opportunities in IT fields. <br> 1. Web and Applications Developer <br>  2. Junior Database Administrator <br>  3. Systems Administrator <br>  4. Network Engineer <br>  5. Junior Information Security Administrator <br> 6. Systems Integration Personnel <br> 7. IT Audit Assistant <br> 8. Technical Support Specialist</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>FUTURE INNOVATIONS</h2>
+				<p>IT students are engaged with emerging technologies like AI, blockchain, cloud computing, IoT, and mobile development. They create solutions for automation, data analysis, cybersecurity, and digital innovation. These innovations shape smart cities, healthcare systems, finance, and entertainment. Students are prepared to lead projects and contribute to technological advancement worldwide.</p>
+			</div>
+			
+			
+		   <h1>THE INFORMATION TECHNOLOGY CURRICULUM</h1>
+
+		  <div class="curriculum-container">
+
+			<!-- First Year, First Semester -->
+			<div class="curriculum-item sem1">
+				<div class="curriculum-button">FIRST YEAR, FIRST SEMESTER</div>
+				<div class="curriculum-table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>COURSE CODE</th>
+								<th>COURSE TITLE</th>
+								<th>UNITS</th>
+								<th>PRE(CO)-REQUISITES</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CIST_101</td>
+								<td>Introduction to Computing (LECTURE)</td>
+								<td>2</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>CIST_101.1</td>
+								<td>Introduction to Computing (LABORATORY)</td>
+								<td>1</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>CIST_102</td>
+								<td>Fundamentals of Programming (LECTURE)</td>
+								<td>2</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>CIST_102.1</td>
+								<td>Fundamentals of Programming (LABORATORY)</td>
+								<td>1</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GEC_ARTA</td>
+								<td>Art Appreciation</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GEC_MATH</td>
+								<td>Mathematics in the Modern World</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GEC_PCOM</td>
+								<td>Purposive Communications</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>	
+							<tr>
+								<td>GEC_STAS</td>
+								<td>Science, Technology and Society</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>PLM_IR01</td>
+								<td>Interdisiplinaryong Pagbasa at Pagsulat Tungo sa <br> Mabisang Pagpapahayag</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>PATHFIT1</td>
+								<td>Physical Activities Towards Health and Fitness 1</td>
+								<td>2</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>NSTP_001</td>
+								<td>National Service Training Program 1</td>
+								<td>-3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+								<td colspan="2">23</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- First Year, Second Semester -->
+			<div class="curriculum-item sem2">
+			<div class="curriculum-button">FIRST YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT_111</td>
+							<td>Discrete Mathematics</td>
+							<td>3</td>
+							<td>1st YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_112</td>
+							<td>Human Computer Interaction (LECTURE)</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>BSIT_112.1</td>
+							<td>Human Computer Interaction (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT_112</td>
+						</tr>
+						<tr>
+							<td>CIST_103</td>
+							<td>Intermediate Programming (LECTURE)</td>
+							<td>2</td>
+							<td>CIST_102, CIST_102.1</td>
+						</tr>
+						<tr>
+							<td>CIST_103.1</td>
+							<td>Intermediate Programming (LABORATORY)</td>
+							<td>1</td>
+							<td>CIST_102, CIST_102.1(CIST_103)</td>
+						</tr>
+						<tr>
+							<td>CIST_104</td>
+							<td>Data Structures and Algorithm (LECTURE)</td>
+							<td>2</td>
+							<td>CIST_102, CIST_102.1</td>
+						</tr>
+						<tr>
+							<td>CIST_104.1</td>
+							<td>Data Structures and Algorithm (LABORATORY)</td>
+							<td>1</td>
+							<td>CIST_102, CIST_102.1(CIST_104)</td>
+						</tr>
+						<tr>
+							<td>GEC_SELF</td>
+							<td>Understanding the Self</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEE_4MST</td>
+							<td>Living in the IT Era</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEE_4SSP</td>
+							<td>The Entrepreneurial Mind</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFIT2</td>
+							<td>Physical Activities Towards Health and Fitness 2</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>NSTP_002</td>
+							<td>National Service Training Program 2</td>
+							<td>-3</td>
+							<td>NSTP_002</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+							<td colspan="2">23</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<!-- Second Year, First Semester -->
+		<div class="curriculum-item sem3">
+			<div class="curriculum-button">SECOND YEAR, FIRST SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT_201</td>
+							<td>Web Systems and Technology (LECTURE)</td>
+							<td>2</td>
+							<td>CIST 101.1</td>
+						</tr>
+						<tr>
+							<td>BSIT_201.1</td>
+							<td>Web Systems and Technology (LABORATORY)</td>
+							<td>1</td>
+							<td>CIST 101.1 (BSIT_201)</td>
+						</tr>
+						<tr>
+							<td>BSIT_202</td>
+							<td>Object Oriented Programming (LECTURE)</td>
+							<td>2</td>
+							<td>CIST_103, CIST_104</td>
+						</tr>
+						<tr>
+							<td>BSIT_202.1</td>
+							<td>Object Oriented Programming (LABORATORY)</td>
+							<td>1</td>
+							<td>CIST_103, CIST_104 (BSIT_202)</td>
+						</tr>
+						<tr>
+							<td>CIST 201</td>
+							<td>Information Management (LECTURE)</td>
+							<td>2</td>
+							<td>CIST_104, CIST 104.1</td>
+						</tr>
+						<tr>
+							<td>CIST 201.1</td>
+							<td>Information Management (LABORATORY</td>
+							<td>1</td>
+							<td>CIST_104, CIST_104.1(CIST_201)</td>
+						</tr>
+						<tr>
+							<td>GEC_ETHC</td>
+							<td>Ethics</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEC_HIST</td>
+							<td>Readings In Philippine History</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEC_WORL</td>
+							<td>The Contemporary World</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEE_1MST</td>
+							<td>Environmental Science</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFIT3</td>
+							<td>Physical Activities Towards Health and Fitness 3</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</td>
+							<td>23</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Second Year, Second Semester -->
+		<div class="curriculum-item sem4">
+			<div class="curriculum-button">SECOND YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 203</td>
+							<td>Database Management (LECTURE)</td>
+							<td>2</td>
+							<td>CIST 201, CIST 201.1</td>
+						</tr>
+						<tr>
+							<td>BSIT 203.1</td>
+							<td>Database Management (LABORATORY)</td>
+							<td>1</td>
+							<td>CIST 201, CIST 201.1</td>
+						</tr>
+						<tr>
+							<td>BSIT 204</td>
+							<td>Fundamentals of Networking (LECTURE)</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>BSIT 204.1</td>
+							<td>Fundamentals of Networking (LABORATORY)</td>
+							<td>1</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>BSIT 205</td>
+							<td>Quantitative Methods</td>
+							<td>3</td>
+							<td>BSIT 111</td>
+						</tr>
+						<tr>
+							<td>BSIT 206</td>
+							<td>Platform Technologies</td>
+							<td>3</td>
+							<td>2ND YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT 207</td>
+							<td>Event Driven Programming (LECTURE)</td>
+							<td>2</td>
+							<td>BSIT 202, BSIT 202.1</td>
+						</tr>
+						<tr>
+							<td>BSIT 207.1</td>
+							<td>Event Driven Programming (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT 202, BSIT 202.1</td>
+						</tr>
+						<tr>
+							<td>BSIT_E01</td>
+							<td>IT Elective 1</td>
+							<td>3</td>
+							<td>2ND YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>GEC_RZAL</td>
+							<td>Rizal's Life and Works</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFIT4</td>
+							<td>Physical Activities Towards Health and Fitness 4</td>
+							<td>2</td>
+							<td>PATHFIT3</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+							<td colspan="2">23</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Third Year,  First Semester -->
+		<div class="curriculum-item sem5">
+			<div class="curriculum-button">THIRD YEAR, FIRST SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 301</td>
+							<td>Information Assurance and Security 1 (LECTURE)</td>
+							<td>2</td>
+							<td>BSIT 206</td>
+						</tr>
+						<tr>
+							<td>BSIT_301.1</td>
+							<td>Information Assurance and Security 1 (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT 206</td>
+						</tr>
+						<tr>
+							<td>BSIT_302</td>
+							<td>Advanced Networking (LECTURE)
+							<td>BSIT_204</td>
+						</tr>
+						<tr>
+							<td>BSIT_302.1</td>
+							<td>Advanced Networking (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT_204 (BSIT_302)</td>
+						</tr>
+						<tr>
+							<td>BSIT_303</td>
+							<td>System Integration and Architecture 1 (LECTURE)</td>
+							<td>2</td>
+							<td>BSIT_202, BSIT_203, BSIT_204</td>
+						</tr>
+						<tr>
+							<td>BSIT_303.1</td>
+							<td>System Integration and Architecture 1 (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT_202, BSIT_203, BSIT_204 (BSIT_303)</td>
+						</tr>
+						<tr>
+							<td>BSIT_E02</td>
+							<td>IT Elective 2</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_E03</td>
+							<td>IT Elective 3</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>CIST_301</td>
+							<td>Applications Development and Emerging Technologies (LECTURE)</td>
+							<td>2</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>CIST_301.1</td>
+							<td>Applications Development and Emerging Technologies (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT_207, BSIT 203</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+							<td colspan="2">18</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Third Year, Second Semester -->
+		<div class="curriculum-item sem6">
+			<div class="curriculum-button">THIRD YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT_304</td>
+							<td>Capstone Project 1</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_305</td>
+							<td>Integrative Programming and Technologies (LECTURE)</td>
+							<td>2</td>
+							<td>CIST 301, BSIT 203</td>
+						</tr>
+						<tr>
+							<td>BSIT_305.1</td>
+							<td>Integrative Programming and Technologies (LABORATORY)</td>
+							<td>1</td>
+							<td>CIST 301, BSIT 203 (BSIT_305)</td>
+						</tr>
+						<tr>
+							<td>BSIT_306</td>
+							<td>Social and Professional Issues</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_307</td>
+							<td>Information Assurance and Security 2 (LECTURE)</td>
+							<td>2</td>
+							<td>BSIT 301</td>
+						</tr>
+						<tr>
+							<td>BSIT_307.1</td>
+							<td>Information Assurance and Security 2 (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT 301</td>
+						</tr>
+						<tr>
+							<td>BSIT_308</td>
+							<td>System Integration and Architecture 2 (LECTURE)</td>
+							<td>2</td>
+							<td>BSIT 303</td>
+						</tr>
+						<tr>
+							<td>BSIT_308.1</td>
+							<td>System Integration and Architecture 2 (LABORATORY)</td>
+							<td>1</td>
+							<td>BSIT_303 (BSIT 308)</td>
+						</tr>
+						<tr>
+							<td>BSIT_E04</td>
+							<td>IT Elective 4</td>
+							<td>2</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+							<td colspan="2">18</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+		<!-- Fourth Year, First Semester -->
+		<div class="curriculum-item sem7">
+			<div class="curriculum-button">FOURTH YEAR, FIRST SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT_401</td>
+							<td>Capstone Project 2</td>
+							<td>3</td>
+							<td>BSIT_304</td>
+						</tr>
+						<tr>
+							<td>BSIT_402</td>
+							<td>Practicum / On The Job Training (LECTURE) </td>
+							<td>2</td>
+							<td>4TH YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_403</td>
+							<td>System Administration and Maintenance</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+							<td colspan="2">8</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Fourth Year, Second Semester -->
+		<div class="curriculum-item sem8">
+			<div class="curriculum-button">FOURTH YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT_404</td>
+							<td>Practicum Industry Immersion (486 HOURS)</td>
+							<td>4</td>
+							<td>BSIT 402</td>
+						</tr>
+						<tr>
+							<td>BSIT_406</td>
+							<td>Capstone Project 3</td>
+							<td>3</td>
+							<td>BSIT</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL SEMESTRAL UNITS</strong></td>
+							<td colspan="2">7</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+			
+				<div class="container" style="text-align: center;">
+				  <div class="radio-wrapper">
+					<input class="input" name="btn" id="value-1" type="radio">
+					<div class="btn">
+					  <span aria-hidden="">_</span>Karunungan
+					  <span class="btn__glitch" aria-hidden="">_Karunungan🦾</span>
+					  <label class="number">r1</label>
+					</div>
+				  </div>
+				  
+				  
+				  <div class="radio-wrapper">
+					<input class="input" name="btn" id="value-2" checked="true" type="radio">
+					<div class="btn">
+					  _Kaunlaran<span aria-hidden="">_</span>
+					  <span class="btn__glitch" aria-hidden="">Kaunlaran</span>
+					  <label class="number">r2</label>
+					</div>
+				  </div>
+				  
+				  <div class="radio-wrapper">
+					<input class="input" name="btn" id="value-3" type="radio">
+					<div class="btn">
+					  Kadakilaan<span aria-hidden=""></span>
+					  <span class="btn__glitch" aria-hidden="">Kadakilaan_</span>
+					  <label class="number">r3</label>
+					</div> 
+				  </div>
+				</div>
+
+			<style>
+			html {
+			  scroll-behavior: smooth;
+			}
+
+			#topBtn {
+			  display: none;
+			  position: fixed;
+			  bottom: 30px;
+			  right: 30px;
+			  padding: 15px;
+			  font-size: 16px;
+			  background: linear-gradient(135deg, #ff9a00, #ff6a00);
+			  color: black;
+			  border: none;
+			  border-radius: 10px;
+			  cursor: pointer;
+			}
+			#topBtn:hover {
+			  background: deepskyblue;
+			}
+			</style>
+
+			<!-- Top anchor -->
+			<div id="top"></div>
+
+			<!-- Scroll-to-top button -->
+			<button id="topBtn" onclick="window.scrollTo(0,0);">
+			  GO UP
+			</button>
+
+			<script>
+			  window.onscroll = function() {
+				const btn = document.getElementById('topBtn');
+				btn.style.display = (document.documentElement.scrollTop > 100) ? 'block' : 'none';
+			  };
+			</script>
+			
+			<div style="margin: 40px auto; max-width: 900px; text-align: center; background: linear-gradient(90deg, #ff6a00, #ee0979); padding: 20px; border-radius: 12px; 
+				  box-shadow: 0 0 15px rgba(0,0,0,0.5); font-family: 'Press Start 2P', monospace; font-size: 12px; line-height: 1.8; color: #fff; text-transform: uppercase; letter-spacing: 1px;">
+				  This mini BSIT curriculum webpage was created by <b>Marc Roden D. Famero</b> from <b>BSIT 1-3</b> for the course <b>Introduction to Computing (CIST101)</b> under <b>Professor Marilou Mangrobang, MPA, MIT</b>. The whole curriculum was based on the updated curriculum given by the <b>College of Information System Technology Management (CISTM)</b>.  
+				  <br><br>
+				  The use of <b>PLM logo</b> and <b>SITE logo</b> is for academic and artistic purposes only. Credits also to the owners of the music playing.
+			</div>
+
+		</body>
+
+</html>

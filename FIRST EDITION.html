@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!---HANDS-ON NUMBER 2: CREATE YOUR OWN WEBPAGE APPLYING HYPERTEXT MARKUP LANGUAGE (HTML) AND CSS ELEMENTS, ATTRIBUTES, ETC -->
+<!-- BSIT CURRICULUM -->
+<!-- 1ST YEAR TO 4TH YEAR, 1ST SEMESTER AND 2ND SEMESTER -->
+<!-- TABLES, ROWS, AND DIV -->
+
+	<head>
+		<title> HANDS-ON ACTIVITY #2 THE BSIT CURRICULUM  </title>
+		<meta charset="UTF-8>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	</head>
+
+		<div style=" 
+			position: fixed;  
+			top: 0;   
+			left: 0;    
+			width: 100%;  
+			height: 100%; 
+			background: url('https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyOXBzZmU2NHJ4NmNncmw2NmFoNDlveGRmOHdoeWY5dThmNDlmcmhsNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/U7huVmA3TKuqvznInJ/giphy.gif') no-repeat center center fixed;
+			background-size: cover; 
+			filter: blur(5px); 
+			z-index: -2;">
+		</div>
+		
+		<style>
+			.header-container {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 40px; /* space between images and text */
+				margin-bottom: 20px;
+			}
+
+			.header-text {
+				text-align: center;
+			}
+
+			.header-text h1, .header-text h2, .header-text h3 {
+				font-family: 'Press Start 2P', monospace;
+				margin: 10px 0; /* adds spacing between headings */
+				transition: all 0.3s ease;
+				letter-spacing: 5px; 
+			}
+
+			.header-text h1 {
+				font-size: 20px;
+				color: white;
+				text-shadow: 0 0 5px red, 0 0 10px red, 0 0 20px red;
+			}
+
+			.header-text h2 {
+				font-size: 15px;
+				color: white;
+				text-shadow: 0 0 5px orange, 0 0 10px orange, 0 0 20px orange;
+				text-decoration: none;
+			}
+
+			.header-text h3 {
+				font-size: 12px;
+				color: white;
+				text-shadow: 0 0 5px blue, 0 0 10px blue, 0 0 20px blue;
+			}
+
+			.header-text h1:hover {
+				text-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red;
+				letter-spacing: 4px;
+			}
+			.header-text h2:hover {
+				text-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange;
+				letter-spacing: 3px;
+			}
+			.header-text h3:hover {
+				text-shadow: 0 0 10px blue, 0 0 20px blue, 0 0 30px blue;
+				letter-spacing: 2px;
+			}
+
+
+			.header-container img {
+				width: 150px; /* fixed width */
+				height: auto; /* keeps aspect ratio */
+				transition: all 0.3s ease;
+			}
+
+			.header-container img:hover {
+				filter: drop-shadow(0 0 20px white) drop-shadow(0 0 40px white);
+				transform: scale(1.2);
+			}
+			
+				.typing-pixel {
+					font-family: 'Press Start 2P', monospace;
+					font-size: 18px;
+					color: #fff;
+					letter-spacing: 2px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-shadow: 
+						0 0 5px #fff,
+						0 0 10px #aaa,
+						0 0 20px #777,
+						0 0 40px #555,
+						0 0 60px #333;
+				}
+
+				/* Individual animation with delays */
+				.typing-pixel1 {
+					width: 9px;
+					animation: typing 4s steps(25, end) forwards, blink 0.75s step-end infinite;
+				}
+
+				.typing-pixel2 {
+					width: 9px;
+					animation: typing 4s steps(25, end) forwards 4.5s, blink 0.75s step-end infinite 4.5s;
+					border-right: 6px solid #fff;
+				}
+
+				@keyframes typing {
+					from { width: 0; }
+					to { width: 320px; } /* adjust based on text length */
+				}
+
+				@keyframes blink {
+					50% { border-color: transparent; }
+				}
+				
+						.arcade-container {
+					display: flex;
+					gap: 20px;
+				}
+
+				.arcade-box {
+					background-color: #111;
+					color: #fff;
+					width: 100%;  /* full width of page */
+					max-height: 40px;  /* show only title initially */
+					border: 3px solid #fff;
+					border-radius: 10px;
+					padding: 15px;
+					overflow: hidden;
+					cursor: pointer;
+					transition: max-height 0.7s ease, box-shadow 0.5s ease, transform 0.3s ease;
+					box-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 15px #0ff;
+					position: relative;
+				}
+
+				.arcade-box:hover {
+					max-height: 400px; /* expand to show content */
+					box-shadow: 
+						0 0 20px #fff, 
+						0 0 40px #f0f, 
+						0 0 60px #0ff, 
+						0 0 80px #ff0, 
+						0 0 100px #ff00ff;
+					transform: scale(1.02);
+				}
+
+				.arcade-box h2 {
+					margin: 0;
+					font-size: 16px;
+					text-align: center; /* centered title */
+					color: #fff;
+					text-shadow: 
+						0 0 5px #fff, 
+						0 0 10px #f0f, 
+						0 0 15px #0ff, 
+						0 0 20px #ff0, 
+						0 0 25px #ff00ff;
+				}
+
+				.arcade-box p {
+					margin-top: 15px;
+					font-size: 12px;
+					line-height: 1.5em;
+					color: #fff;
+					text-align: justify; /* content justified */
+					opacity: 0;
+					transform: translateY(-15px);
+					transition: opacity 0.7s ease, transform 0.7s ease;
+				}
+
+				.arcade-box:hover p {
+					opacity: 1;
+					transform: translateY(0);
+				}
+
+				/* Add subtle animated neon flicker */
+				.arcade-box::before {
+					content: '';
+					position: absolute;
+					top: -3px; left: -3px; right: -3px; bottom: -3px;
+					border: 2px solid #fff;
+					border-radius: 12px;
+					opacity: 0.4;
+					animation: neonFlicker 1.5s infinite alternate;
+				}
+
+				@keyframes neonFlicker {
+					0% { opacity: 0.3; box-shadow: 0 0 5px #fff, 0 0 15px #f0f; }
+					50% { opacity: 0.6; box-shadow: 0 0 10px #fff, 0 0 25px #0ff; }
+					100% { opacity: 0.4; box-shadow: 0 0 7px #fff, 0 0 20px #ff0; }
+				}
+				
+				
+				 h1 {
+					text-align: center;
+					font-size: 18px;
+					color: #fff;
+					text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 20px #0ff, 0 0 30px #ff0;
+					margin-bottom: 40px;
+				}
+
+				.curriculum-container {
+					max-width: 1200px;
+					margin: 0 auto 60px auto;
+				}
+
+				/* Wrapper for button + table */
+				.curriculum-item {
+					margin-bottom: 30px;
+				}
+
+				/* Arcade button */
+				.curriculum-button {
+					display: block;
+					margin: 0 auto;
+					padding: 15px 30px;
+					font-size: 12px;
+					background-color: transparent;
+					border: 3px solid #fff;
+					border-radius: 10px;
+					color: #fff;
+					cursor: pointer;
+					transition: all 0.4s ease;
+					text-align: center;
+					text-shadow: 0 0 5px #fff, 0 0 10px #f0f, 0 0 15px #0ff;
+				}
+
+				.curriculum-button:hover {
+					background: linear-gradient(90deg, #ff00ff, #00ffff);
+					color: #000;
+					box-shadow: 0 0 20px #fff, 0 0 40px #f0f, 0 0 60px #0ff, 0 0 80px #ff0;
+					transform: scale(1.1);
+				}
+
+				/* Table wrapper hidden initially */
+				.curriculum-table-wrapper {
+					max-height: 0;
+					overflow: hidden;
+					transition: max-height 0.7s ease;
+				}
+
+				/* Expand table only when container is hovered */
+				.curriculum-item:hover .curriculum-table-wrapper {
+					max-height: 2000px; /* enough for table to fully expand */
+				}
+
+				table {
+					width: 100%;
+					border-collapse: collapse;
+					margin-top: 20px;
+					border: 2px solid #fff;
+					box-shadow: 0 0 20px #fff, 0 0 40px #f0f, 0 0 60px #0ff;
+					border-radius: 10px;
+				}
+
+				th, td {
+					padding: 10px;
+					text-align: left;
+					border: 1px solid #fff;
+					font-size: 12px;
+					color: #fff;
+					text-shadow: 0 0 3px #fff, 0 0 5px #0ff;
+				}
+
+				th {
+					background-color: #111;
+					text-align: center;
+					font-size: 13px;
+					text-shadow: 0 0 5px #fff, 0 0 10px #ff0, 0 0 15px #0ff;
+				}
+
+				tr:nth-child(even) td {
+					background-color: rgba(255, 255, 255, 0.05);
+				}
+
+				tr:hover td {
+					background-color: rgba(255, 0, 255, 0.2);
+					text-shadow: 0 0 5px #ff0, 0 0 10px #f0f, 0 0 15px #0ff;
+				}
+			</style>
+
+				<body style="background-color:#000000;">
+					<div class="header-container">
+						<img src="PLM LOGO SEAL.png" alt="PLM Logo">
+						
+						<div class="header-text">
+							<h1>PAMANTASAN NG LUNGSOD NG MAYNILA</h1>
+							<h2>Gen. Luna corner Muralla Street, Intramuros, Manila | <a href="https://plm.edu.ph" target="blank"> https://plm.edu.ph"</h2> </a>
+							<h3>COLLEGE OF INFORMATION SYSTEMS AND TECHNOLOGY MANAGEMENT</h3>
+						</div>
+						
+						<img src="download (1).png" alt="Second Logo">
+					</div>
+					
+
+				 <p class="typing-pixel typing-pixel1">HELLO WORLD TO</p>
+				 <p class="typing-pixel typing-pixel2"> OUR FUTURE IT!!!</p>
+				 
+
+			<div class="arcade-box">
+				<h2>WHAT IS CISTM</h2>
+				<p>The College of Information Systems and Technology Management (CISTM) consolidates IT education at PLM, offering BS Computer Science, BS Information Technology, and Master in IT. Formed in 2024 under the Academic Cluster, CISTM focuses on hands-on learning, research, and industry readiness. Students participate in coding bootcamps, cybersecurity challenges, networking projects, and tech seminars. The college emphasizes innovation, teamwork, and problem-solving to prepare graduates for real-world IT careers.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>WHAT IS PLM SITE</h2>
+				<p>The Society of Information Technology Enthusiasts (SITE) at PLM is a student organization promoting IT skills and projects. SITE conducts workshops, hackathons, app development competitions, and cybersecurity training. Members gain mentorship, exposure to emerging technologies, and networking opportunities. SITE fosters collaboration, creativity, and professional development for IT students at all levels.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>WHAT IS INFORMATION TECHNOLOGY</h2>
+				<p>Information Technology (IT) involves using computers, software, and networks to collect, process, store, and transmit information. IT powers business systems, communications, healthcare solutions, and entertainment. Fields include software development, database management, cybersecurity, AI, cloud computing, and networking. IT is crucial for automation, problem-solving, and innovation, shaping the modern digital world.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>CAREER PATHS & OPPORTUNITIES</h2>
+				<p>BSIT graduates can work as Software Developers, Network Administrators, Database Analysts, IT Consultants, Cybersecurity Specialists, or pursue entrepreneurship. They may join startups, tech companies, government agencies, or research institutions. Continuous learning, certifications, and specialization in AI, cloud computing, or cybersecurity enhance career prospects and open global opportunities in IT fields.</p>
+			</div>
+
+			<div class="arcade-box">
+				<h2>FUTURE INNOVATIONS</h2>
+				<p>IT students are engaged with emerging technologies like AI, blockchain, cloud computing, IoT, and mobile development. They create solutions for automation, data analysis, cybersecurity, and digital innovation. These innovations shape smart cities, healthcare systems, finance, and entertainment. Students are prepared to lead projects and contribute to technological advancement worldwide.</p>
+			</div>
+			
+			
+			
+		   <h1>THE INFORMATION TECHNOLOGY CURRICULUM</h1>
+
+		  <div class="curriculum-container">
+
+			<!-- First Year, First Semester -->
+			<div class="curriculum-item">
+				<div class="curriculum-button">FIRST YEAR, FIRST SEMESTER</div>
+				<div class="curriculum-table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>COURSE CODE</th>
+								<th>COURSE TITLE</th>
+								<th>UNITS</th>
+								<th>PRE(CO)-REQUISITES</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>CIST 101</td>
+								<td>Introduction to Computing (lec)</td>
+								<td>2</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>CIST 101</td>
+								<td>Introduction to Computing (lab)</td>
+								<td>1</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>CIST 102</td>
+								<td>Fundamentals of Programming (lec)</td>
+								<td>2</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>CIST 102.1</td>
+								<td>Fundamentals of Programming (lab)</td>
+								<td>1</td>
+								<td>CIST 102</td>
+							</tr>
+							<tr>
+								<td>GEC ARTA</td>
+								<td>Art Appreciation</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GEC MATH</td>
+								<td>Mathematics in the Modern World</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GEC PCOM</td>
+								<td>Purposive Communications</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>GEC STAS</td>
+								<td>Science, Technology and Society</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>PLM IR01</td>
+								<td>Interdisciplinary Reading and Writing</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>PATHFIT1</td>
+								<td>Physical Activities Towards Health and Fitness 1</td>
+								<td>2</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td>NSTP 001</td>
+								<td>National Service Training Program 1</td>
+								<td>3</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<td colspan="2"><strong>TOTAL</strong></td>
+								<td colspan="2">23</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<!-- First Year, Second Semester -->
+			<div class="curriculum-item">
+			<div class="curriculum-button">FIRST YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 111</td>
+							<td>Discrete Mathematics</td>
+							<td>3</td>
+							<td>1st YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_112</td>
+							<td>Human Computer Interaction (lec)</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>BSIT_112.1</td>
+							<td>Human Computer Interaction (lab)</td>
+							<td>1</td>
+							<td>BSIT_112</td>
+						</tr>
+						<tr>
+							<td>CIST_103</td>
+							<td>Intermediate Programming (lec)</td>
+							<td>2</td>
+							<td>CIST_102, CIST_102.1</td>
+						</tr>
+						<tr>
+							<td>CIST_103.1</td>
+							<td>Intermediate Programming (lab)</td>
+							<td>1</td>
+							<td>CIST_102, CIST_102.1(CIST_103)</td>
+						</tr>
+						<tr>
+							<td>CIST_104</td>
+							<td>Data Structures and Algorithm (lec)</td>
+							<td>2</td>
+							<td>CIST_102, CIST_102.1</td>
+						</tr>
+						<tr>
+							<td>CIST_104.1</td>
+							<td>Data Structures and Algorithm (lab)</td>
+							<td>1</td>
+							<td>CIST_102, CIST_102.1(CIST_104)</td>
+						</tr>
+						<tr>
+							<td>GEC_SELF</td>
+							<td>Understanding the Self</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEE_4MST</td>
+							<td>Living in the IT Era</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEE_4SSP</td>
+							<td>The Entrepreneurial Mind</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFIT2</td>
+							<td>Physical Activities Towards Health and Fitness 2</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>NSTP_002</td>
+							<td>National Service Training Program 2</td>
+							<td>3</td>
+							<td>NSTP_001</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL</strong></td>
+							<td colspan="2">23</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<!-- Second Year, First Semester -->
+		<div class="curriculum-item">
+			<div class="curriculum-button">SECOND YEAR, FIRST SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT_201</td>
+							<td>Web Systems and Technology (lec)</td>
+							<td>2</td>
+							<td>CIST 101.1</td>
+						</tr>
+						<tr>
+							<td>BSIT_201.1</td>
+							<td>Web Systems and Technology (lab)</td>
+							<td>1</td>
+							<td>CIST 101.1 (BSIT_201)</td>
+						</tr>
+						<tr>
+							<td>BSIT_202</td>
+							<td>Object Oriented Programming (lec)</td>
+							<td>2</td>
+							<td>CIST_103, CIST_104</td>
+						</tr>
+						<tr>
+							<td>BSIT_202.1</td>
+							<td>Object Oriented Programming (lab)</td>
+							<td>1</td>
+							<td>CIST_103, CIST_104 (BSIT_202)</td>
+						</tr>
+						<tr>
+							<td>CIST 201</td>
+							<td>Information Management (lec)</td>
+							<td>2</td>
+							<td>CIST_104, CIST 104.1</td>
+						</tr>
+						<tr>
+							<td>CIST 201.1</td>
+							<td>Information Management (lab)</td>
+							<td>1</td>
+							<td>CIST_104, CIST_104.1(CIST_201)</td>
+						</tr>
+						<tr>
+							<td>GEC_ETHC</td>
+							<td>Ethics</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEC_HIST</td>
+							<td>Readings In Philippine History</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEC_WORL</td>
+							<td>The Contemporary World</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>GEE_1MST</td>
+							<td>Environmental Science</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFITJ</td>
+							<td>Physical Activities Towards Health and Fitness 3</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFIT2</td>
+							<td>Total</td>
+							<td>23</td>
+							<td>-</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Second Year, Second Semester -->
+		<div class="curriculum-item">
+			<div class="curriculum-button">SECOND YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 203</td>
+							<td>Database Management (lec)</td>
+							<td>2</td>
+							<td>CIST 201, CIST 201.1</td>
+						</tr>
+						<tr>
+							<td>BSIT 203.1</td>
+							<td>Database Management (lab)</td>
+							<td>1</td>
+							<td>CIST 201, CIST 201.1</td>
+						</tr>
+						<tr>
+							<td>BSIT 204</td>
+							<td>Fundamentals of Networking (lec)</td>
+							<td>2</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>BSIT 204.1</td>
+							<td>Fundamentals of Networking (lab)</td>
+							<td>1</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>BSIT 205</td>
+							<td>Quantitative Methods</td>
+							<td>3</td>
+							<td>BSIT 111</td>
+						</tr>
+						<tr>
+							<td>BSIT 206</td>
+							<td>Platform Technologies</td>
+							<td>3</td>
+							<td>2ND YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT 207</td>
+							<td>Event Driven Programming (lec)</td>
+							<td>2</td>
+							<td>BSIT 202, BSIT 202.1</td>
+						</tr>
+						<tr>
+							<td>BSIT 207.1</td>
+							<td>Event Driven Programming (lab)</td>
+							<td>1</td>
+							<td>BSIT 202, BSIT 202.1</td>
+						</tr>
+						<tr>
+							<td>BSIT_E01</td>
+							<td>Elective 1</td>
+							<td>3</td>
+							<td>2ND YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>GEC_RZAL</td>
+							<td>Rizal's Life and Works</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td>PATHFIT4</td>
+							<td>Physical Activities Towards Health and Fitness 4</td>
+							<td>2</td>
+							<td>PATHFIT3</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL</strong></td>
+							<td colspan="2">23</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Third Year,  First Semester -->
+		<div class="curriculum-item">
+			<div class="curriculum-button">THIRD YEAR, FIRST SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 301</td>
+							<td>Information Assurance and Security 1 (lec)</td>
+							<td>2</td>
+							<td>BSIT 206</td>
+						</tr>
+						<tr>
+							<td>BSIT_301.1</td>
+							<td>Information Assurance and Security 1 (lab)</td>
+							<td>1</td>
+							<td>BSIT 206</td>
+						</tr>
+						<tr>
+							<td>BSIT_302</td>
+							<td>Advanced Networking (lec)</td>
+							<td>2</td>
+							<td>BSIT_204</td>
+						</tr>
+						<tr>
+							<td>BSIT_302.1</td>
+							<td>Advanced Networking (lab)</td>
+							<td>1</td>
+							<td>BSIT_204 (BSIT_302)</td>
+						</tr>
+						<tr>
+							<td>BSIT_303</td>
+							<td>System Integration and Architecture 1 (lec)</td>
+							<td>2</td>
+							<td>BSIT_202, BSIT_203, BSIT_204</td>
+						</tr>
+						<tr>
+							<td>BSIT_303.1</td>
+							<td>System Integration and Architecture 1 (lab)</td>
+							<td>1</td>
+							<td>BSIT_202, BSIT_203, BSIT_204 (BSIT_303)</td>
+						</tr>
+						<tr>
+							<td>BSIT_E02</td>
+							<td>Elective 2</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT_E03</td>
+							<td>Elective 3</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>CIST 301</td>
+							<td>Applications Development and Emerging Technologies (lec)</td>
+							<td>2</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>CIST_301.1</td>
+							<td>Applications Development and Emerging Technologies (lab)</td>
+							<td>1</td>
+							<td>BSIT 207, BSIT 203</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL</strong></td>
+							<td colspan="2">18</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Third Year, Second Semester -->
+		<div class="curriculum-item">
+			<div class="curriculum-button">THIRD YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 304</td>
+							<td>Capstone Project 1</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT 305</td>
+							<td>Integrative Programming and Technologies (lec)</td>
+							<td>2</td>
+							<td>CIST 301, BSIT 203</td>
+						</tr>
+						<tr>
+							<td>BSIT 305.1</td>
+							<td>Integrative Programming and Technologies (lab)</td>
+							<td>1</td>
+							<td>CIST 301, BSIT 203 (BSIT_305)</td>
+						</tr>
+						<tr>
+							<td>BSIT 306</td>
+							<td>Social and Professional Issues</td>
+							<td>3</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT 307</td>
+							<td>Information Assurance and Security 2 (lec)</td>
+							<td>2</td>
+							<td>BSIT 301</td>
+						</tr>
+						<tr>
+							<td>BSIT 307.1</td>
+							<td>Information Assurance and Security 2 (lab)</td>
+							<td>1</td>
+							<td>BSIT 301</td>
+						</tr>
+						<tr>
+							<td>BSIT 308</td>
+							<td>System Integration and Architecture 2 (lec)</td>
+							<td>2</td>
+							<td>BSIT 303</td>
+						</tr>
+						<tr>
+							<td>BSIT 308.1</td>
+							<td>System Integration and Architecture 2 (lab)</td>
+							<td>1</td>
+							<td>BSIT 303 (BSIT 308)</td>
+						</tr>
+						<tr>
+							<td>BSIT E04</td>
+							<td>Elective 4</td>
+							<td>2</td>
+							<td>3RD YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL</strong></td>
+							<td colspan="2">18</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+
+		<!-- Fourth Year, First Semester -->
+		<div class="curriculum-item">
+			<div class="curriculum-button">FOURTH YEAR, FIRST SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 401</td>
+							<td>Capstone Project 2</td>
+							<td>3</td>
+							<td>BSIT 304</td>
+						</tr>
+						<tr>
+							<td>BSIT 402</td>
+							<td>Practicum (Lecture)</td>
+							<td>2</td>
+							<td>4TH YEAR STANDING</td>
+						</tr>
+						<tr>
+							<td>BSIT 403</td>
+							<td>System Administration and Maintenance</td>
+							<td>3</td>
+							<td>-</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL</strong></td>
+							<td colspan="2">8</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Fourth Year, Second Semester -->
+		<div class="curriculum-item">
+			<div class="curriculum-button">FOURTH YEAR, SECOND SEMESTER</div>
+			<div class="curriculum-table-wrapper">
+				<table>
+					<thead>
+						<tr>
+							<th>COURSE CODE</th>
+							<th>COURSE TITLE</th>
+							<th>UNITS</th>
+							<th>PRE(CO)-REQUISITES</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>BSIT 404</td>
+							<td>Practicum Industry Immersion (486 hours)</td>
+							<td>4</td>
+							<td>BSIT 402</td>
+						</tr>
+						<tr>
+							<td>BSIT 406</td>
+							<td>Capstone Project 3</td>
+							<td>3</td>
+							<td>BSIT</td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong>TOTAL</strong></td>
+							<td colspan="2">7</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+			<style>
+			html {
+			  scroll-behavior: smooth;
+			}
+
+			#topBtn {
+			  display: none;
+			  position: fixed;
+			  bottom: 30px;
+			  right: 30px;
+			  padding: 15px;
+			  font-size: 16px;
+			  background: lightblue;
+			  color: black;
+			  border: none;
+			  border-radius: 10px;
+			  cursor: pointer;
+			}
+			#topBtn:hover {
+			  background: deepskyblue;
+			}
+			</style>
+
+			<!-- Top anchor -->
+			<div id="top"></div>
+
+			<!-- Scroll-to-top button -->
+			<button id="topBtn" onclick="window.scrollTo(0,0);">
+			  Go to Top
+			</button>
+
+			<script>
+			  window.onscroll = function() {
+				const btn = document.getElementById('topBtn');
+				btn.style.display = (document.documentElement.scrollTop > 100) ? 'block' : 'none';
+			  };
+			</script>
+
+		</body>
+
+
+</html>
